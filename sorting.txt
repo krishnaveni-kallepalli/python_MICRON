@@ -1,0 +1,62 @@
+def quicksort(l,lb,ub):
+    if lb < ub:
+        pivot = lb
+        start = lb
+        end = ub 
+        while(start < end):
+            while(l[pivot] >= l[start]):
+                start = start+1
+            while l[end] > l[pivot]:
+                end = end-1
+            if (start < end):
+                l[start],l[end] = l[end],l[start]
+        l[pivot],l[end] = l[end],l[pivot]
+        quicksort(l,lb,end-1)
+        quicksort(l,end+1,ub)
+    print(l)
+l=[10,4,2,9,8,6,7]
+n = len(l)
+quicksort(l,0,n-1)    
+
+------------------------------------------------
+
+l=[9,5,7,4,2,6,33,45]
+n = len(l)
+print(n)
+def bubblesort(l):
+    for i in range(0,len(l)):
+        for j in range(0,len(l)-1-i):
+            if l[j] > l[j+1]:
+                l[j],l[j+1] = l[j+1],l[j]
+    print(l)
+def insertionsort(l):
+    for i in range(1,len(l)):
+        temp = l[i]
+        j=i-1
+        while(j>=0 and l[j]>temp):
+            l[j+1] = l[j]
+            j=j-1
+        l[j+1] = temp
+    print(l)
+def selectionsort(l):
+    for i in range(0,n):
+        min = i
+        for j in range(i+1,n):
+            if( l[j]<l[min]):
+                min = j
+        if min != i:
+            temp = l[min]
+            l[min] = l[i]
+            l[i] = temp
+    print(l)
+def selectionsort1(l):
+    for i in range(0,n):
+        min = i
+        for j in range(i+1,n):
+            if( l[j]<l[min]):
+                min = j
+            l[min],l[i] = l[i],l[min]
+    print(l)
+bubblesort(l)
+insertionsort(l)
+selectionsort(l)
