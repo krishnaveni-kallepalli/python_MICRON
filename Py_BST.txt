@@ -1,0 +1,93 @@
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.left = None
+        self.right = None
+    def insert(root,data):
+        if root is None:
+            return Node(data)
+        else:
+            if data < root.data:
+                root.left = insert(root.left,data)
+            else:
+                root.right = insert(root.right,data)
+        return root
+    def inorder(root):
+        if root is not None:
+            inorder(root.left)
+            print(root.data , end=' ')
+            inorder(root.right)
+
+    def preorder(root):
+        if root is not None:
+            print(root.data,end=' ')
+            preorder(root.left)
+            preorder(root.right)
+
+    def postorder(root):
+        if root is not None:
+            preorder(root.left)
+            preorder(root.right)
+            print(root.data,end=' ')
+root = None
+root = insert(root,10)
+root = insert(root,40)
+root = insert(root,50)
+root = insert(root,30)
+root = insert(root,20)
+inorder(root)
+print("\n")
+preorder(root)
+print("\n")
+postorder(root)
+print("\n")
+
+
+
+
+
+
+
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.left = None
+        self.right = None
+def insert(root,data):
+    if root is None:
+        return Node(data)
+    else:
+        if data < root.data:
+            root.left = insert(root.left,data)
+        else:
+            root.right = insert(root.right,data)
+    return root
+def inorder(root):
+    if root is not None:
+        inorder(root.left)
+        print(root.data , end=' ')
+        inorder(root.right)
+
+def preorder(root):
+    if root is not None:
+        print(root.data,end=' ')
+        preorder(root.left)
+        preorder(root.right)
+
+def postorder(root):
+    if root is not None:
+        preorder(root.left)
+        preorder(root.right)
+        print(root.data,end=' ')
+root = None
+root = insert(root,10)
+root = insert(root,40)
+root = insert(root,50)
+root = insert(root,30)
+root = insert(root,20)
+inorder(root)
+print("\n")
+preorder(root)
+print("\n")
+postorder(root)
+print("\n")

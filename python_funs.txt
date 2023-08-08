@@ -1,0 +1,19 @@
+def nums():
+    for i in range(4):
+        print(i)
+    print("fun done")
+print("fun start")
+str="lets begin"
+print(str)
+nums()
+
+
+
+
+import math as m
+def add(a,b):
+    return a+b
+c=add(2,3)
+print(c)
+print(m.sqrt(4))
+print(m.pow(2,3))
